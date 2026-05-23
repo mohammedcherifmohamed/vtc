@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="description" content="Service VTC de luxe 24h/24 et 7j/7. Chauffeur privé pour transferts aéroport, gares et déplacements VIP. Réservez votre Mercedes, BMW ou Tesla avec chauffeur professionnel.">
+    <meta name="keywords" content="VTC, chauffeur privé, transfert aéroport, taxi privé, service de luxe, Paris CDG, Orly, Nice Monaco, transport VIP">
+    <meta name="author" content="LuxuryDrive VTC">
+    <meta name="robots" content="index, follow">
+    <title>LuxuryDrive VTC | Chauffeur Privé 24h/24 - Service Premium</title>
+    <!-- Tailwind CSS CDN + Google Fonts + Font Awesome -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Tailwind custom configuration for better luxury theme -->
+    <style>
+        * {
+            font-family: 'Inter', sans-serif;
+        }
+        body {
+            background-color: #0a0a0a;
+            scroll-behavior: smooth;
+        }
+        /* Custom gold gradient & luxury accents */
+        .gold-text {
+            background: linear-gradient(135deg, #D4AF37 0%, #F3E5AB 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        .gold-border {
+            border-image: linear-gradient(135deg, #D4AF37, #F3E5AB) 1;
+            border-style: solid;
+            border-width: 1px;
+        }
+        .btn-gold {
+            background: linear-gradient(135deg, #D4AF37 0%, #B8942E 100%);
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 20px -5px rgba(212, 175, 55, 0.3);
+        }
+        .btn-gold:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 20px 25px -8px rgba(212, 175, 55, 0.5);
+            background: linear-gradient(135deg, #E5C158 0%, #C9A435 100%);
+        }
+        .glass-card {
+            background: rgba(20, 20, 30, 0.7);
+            backdrop-filter: blur(6px);
+            border-radius: 1.5rem;
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            transition: all 0.4s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+        }
+        .glass-card:hover {
+            border-color: rgba(212, 175, 55, 0.6);
+            transform: translateY(-8px);
+            box-shadow: 0 20px 30px -12px rgba(0,0,0,0.5);
+        }
+        .service-card, .vehicle-card, .testimonial-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .service-card:hover, .vehicle-card:hover, .testimonial-card:hover {
+            transform: translateY(-6px);
+        }
+        .sticky-call-btn {
+            transition: all 0.2s ease;
+        }
+        .sticky-call-btn:hover {
+            transform: scale(1.05);
+            background: linear-gradient(135deg, #E5C158, #B8942E);
+        }
+        .fade-up {
+            opacity: 0;
+            transform: translateY(25px);
+            transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+        }
+        .fade-up.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .hero-bg {
+            background: linear-gradient(107deg, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.4) 100%), url('car3.jpeg');
+            background-size: cover;
+            background-position: center 30%;
+        }
+        @media (max-width: 768px) {
+            .hero-bg {
+                background-position: 35% center;
+            }
+        }
+        .whatsapp-float {
+            position: fixed;
+            bottom: 90px;
+            right: 20px;
+            z-index: 40;
+            background-color: #25D366;
+            border-radius: 50%;
+            width: 56px;
+            height: 56px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+            transition: all 0.2s;
+        }
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+            background-color: #20b859;
+        }
+        ::-webkit-scrollbar {
+            width: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #1a1a1a;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #D4AF37;
+            border-radius: 6px;
+        }
+        .route-card {
+            border-left: 3px solid #D4AF37;
+        }
+    </style>
+</head>
+<body class="text-white">
+
+    <!-- Sticky Call Button (Mobile + Desktop, always visible) -->
+    <div class="fixed bottom-6 left-1/2 transform -translate-x-1/2 z-50 md:bottom-8">
+        <a href="tel:+33123456789" class="sticky-call-btn flex items-center gap-3 bg-gradient-to-r from-[#D4AF37] to-[#B8942E] text-black font-extrabold py-3 px-7 rounded-full shadow-2xl text-lg md:text-xl transition-all duration-300 hover:shadow-gold">
+            <i class="fas fa-phone-alt text-xl"></i>
+            <span>  +33 1 23 45 67 89</span>
+        </a>
+    </div>
+
+    <!-- WhatsApp Floating Button -->
+    <a href="https://wa.me/33123456789?text=Bonjour%2C%20je%20souhaite%20r%C3%A9server%20un%20chauffeur%20VIP" target="_blank" class="whatsapp-float" aria-label="WhatsApp">
+        <i class="fab fa-whatsapp text-3xl text-white"></i>
+    </a>
+
+    <!-- Navigation simple (luxury minimal) -->
+    <nav class="fixed top-0 w-full z-30 bg-black/80 backdrop-blur-md border-b border-white/10 py-4 px-6 md:px-12">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <div class="text-2xl font-bold tracking-tight"><span class="gold-text">Luxury</span>Drive</div>
+            <div class="hidden md:flex gap-8 text-sm font-medium">
+                <a href="#services" class="hover:text-[#D4AF37] transition">Services</a>
+                <a href="#routes" class="hover:text-[#D4AF37] transition">Trajets</a>
+                <a href="#vehicles" class="hover:text-[#D4AF37] transition">Véhicules</a>
+                <a href="#testimonials" class="hover:text-[#D4AF37] transition">Avis</a>
+            </div>
+            <a href="tel:+33123456789" class="hidden md:flex items-center gap-2 bg-white/10 hover:bg-[#D4AF37]/20 border border-[#D4AF37]/40 rounded-full px-5 py-2 text-sm font-semibold transition">
+                <i class="fas fa-phone-alt text-[#D4AF37]"></i> Appel urgent
+            </a>
+        </div>
+    </nav>
+
+    <main>
+        <!-- 1. HERO SECTION (primary conversion) -->
+        <section class="hero-bg min-h-screen flex items-center relative pt-20">
+            <div class="absolute inset-0 bg-gradient-to-b from-black/60 via-black/30 to-black/80"></div>
+            <div class="relative z-10 max-w-6xl mx-auto px-6 md:px-12 text-center md:text-left">
+                <div class="fade-up">
+                    <span class="inline-block px-4 py-1 rounded-full bg-[#D4AF37]/20 text-[#F3E5AB] text-xs font-semibold tracking-wide mb-4 border border-[#D4AF37]/30">  Service Premium 24h/24  </span>
+                    <h1 class="text-4xl md:text-6xl lg:text-7xl font-extrabold leading-tight tracking-tight">
+                        Chauffeur Privé <br>
+                        <span class="gold-text">Disponible 24h/24</span>
+                    </h1>
+                    <p class="text-lg md:text-2xl text-gray-200 mt-6 max-w-2xl mx-auto md:mx-0">
+                        Transferts aéroports, gares et déplacements VIP. Confort, ponctualité et élégance.
+                    </p>
+                    <!-- BIG CTA -->
+                    <div class="mt-10 flex flex-col sm:flex-row gap-5 justify-center md:justify-start">
+                        <a href="tel:+33123456789" class="btn-gold text-black font-bold text-xl px-8 py-4 rounded-xl flex items-center justify-center gap-3 transition-all duration-300 shadow-2xl">
+                            <i class="fas fa-phone-alt text-2xl"></i>   Appeler Maintenant
+                        </a>
+                        <div class="flex flex-wrap gap-4 justify-center md:justify-start text-sm text-white/80 items-center">
+                            <div class="flex items-center gap-2"><i class="fas fa-clock text-[#D4AF37]"></i> Disponible 24/7</div>
+                            <div class="flex items-center gap-2"><i class="fas fa-bolt text-[#D4AF37]"></i> Réservation rapide</div>
+                            <div class="flex items-center gap-2"><i class="fas fa-crown text-[#D4AF37]"></i> Service VIP</div>
+                        </div>
+                    </div>
+                    <!-- Phone number visible -->
+                    <div class="mt-8 bg-black/40 backdrop-blur-sm inline-block rounded-full px-6 py-2 border border-white/20">
+                        <span class="text-lg font-mono tracking-wider"><i class="fas fa-phone-alt mr-2 text-[#D4AF37]"></i> +33 1 23 45 67 89</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. SERVICES SECTION -->
+        <section id="services" class="py-20 px-6 md:px-12 bg-black/95">
+            <div class="max-w-7xl mx-auto">
+                <div class="text-center mb-14 fade-up">
+                    <h2 class="text-3xl md:text-5xl font-bold">Nos <span class="gold-text">Services d'Exception</span></h2>
+                    <div class="w-24 h-1 bg-gradient-to-r from-[#D4AF37] to-transparent mx-auto mt-4 rounded-full"></div>
+                </div>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- 6 cards -->
+                    <div class="glass-card p-6 service-card fade-up">
+                        <i class="fas fa-plane-departure text-4xl text-[#D4AF37] mb-4"></i>
+                        <h3 class="text-2xl font-bold">Transfert Aéroport</h3>
+                        <p class="text-gray-300 mt-2">Prise en charge à CDG, Orly, Nice ou tout aéroport. Suivi de vol et attente offerte.</p>
+                    </div>
+                    <div class="glass-card p-6 service-card fade-up">
+                        <i class="fas fa-train text-4xl text-[#D4AF37] mb-4"></i>
+                        <h3 class="text-2xl font-bold">Transport Gare</h3>
+                        <p class="text-gray-300 mt-2">Gares Paris Lyon, Montparnasse, Saint-Charles Marseille. Ponctualité garantie.</p>
+                    </div>
+                    <div class="glass-card p-6 service-card fade-up">
+                        <i class="fas fa-hourglass-half text-4xl text-[#D4AF37] mb-4"></i>
+                        <h3 class="text-2xl font-bold">Mise à disposition</h3>
+                        <p class="text-gray-300 mt-2">Location de véhicule avec chauffeur à la demi-journée ou journée complète.</p>
+                    </div>
+                    <div class="glass-card p-6 service-card fade-up">
+                        <i class="fas fa-briefcase text-4xl text-[#D4AF37] mb-4"></i>
+                        <h3 class="text-2xl font-bold">Déplacements professionnels</h3>
+                        <p class="text-gray-300 mt-2">Solutions corporate, discrétion, confort haut de gamme pour vos rendez-vous.</p>
+                    </div>
+                    <div class="glass-card p-6 service-card fade-up">
+                        <i class="fas fa-road text-4xl text-[#D4AF37] mb-4"></i>
+                        <h3 class="text-2xl font-bold">Longue distance</h3>
+                        <p class="text-gray-300 mt-2">Paris – Bruxelles, Lyon – Genève. Trajets interurbains premium.</p>
+                    </div>
+                    <div class="glass-card p-6 service-card fade-up">
+                        <i class="fas fa-gem text-4xl text-[#D4AF37] mb-4"></i>
+                        <h3 class="text-2xl font-bold">Service VIP</h3>
+                        <p class="text-gray-300 mt-2">Accompagnement personnalisé, champagne, wifi à bord, presse quotidienne.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. POPULAR ROUTES (SEO & conversions) -->
+        <section id="routes" class="py-20 px-6 md:px-12 bg-gradient-to-b from-black to-neutral-900">
+            <div class="max-w-7xl mx-auto">
+                <div class="text-center mb-12 fade-up">
+                    <h2 class="text-3xl md:text-5xl font-bold">Trajets <span class="gold-text">Les Plus Demandés</span></h2>
+                    <p class="text-gray-300 mt-3">Transferts rapides, tarifs fixes, confort absolu</p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <div class="bg-white/5 rounded-2xl p-5 border border-white/10 route-card hover:bg-white/10 transition fade-up">
+                        <div class="flex justify-between items-start">
+                            <div><i class="fas fa-map-marker-alt text-[#D4AF37] text-xl"></i><h3 class="text-xl font-bold mt-1">Paris → CDG</h3></div>
+                            <span class="text-[#D4AF37] font-mono">45 min</span>
+                        </div>
+                        <p class="text-gray-300 text-sm mt-2">Transfert direct Paris centre vers Aéroport Charles de Gaulle. Prise en charge à domicile ou hôtel.</p>
+                        <a href="tel:+33123456789" class="inline-flex items-center gap-2 mt-4 text-[#D4AF37] font-semibold hover:underline">Appeler <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                    <div class="bg-white/5 rounded-2xl p-5 border border-white/10 route-card hover:bg-white/10 transition fade-up">
+                        <div><i class="fas fa-map-marker-alt text-[#D4AF37] text-xl"></i><h3 class="text-xl font-bold mt-1">Paris → Orly</h3></div>
+                        <p class="text-gray-300 text-sm mt-2">Accès rapide à Orly. Prise en charge VIP, assistance bagages et trajet serein.</p>
+                        <a href="tel:+33123456789" class="inline-flex items-center gap-2 mt-4 text-[#D4AF37] font-semibold hover:underline">Appeler <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                    <div class="bg-white/5 rounded-2xl p-5 border border-white/10 route-card hover:bg-white/10 transition fade-up">
+                        <div><i class="fas fa-map-marker-alt text-[#D4AF37] text-xl"></i><h3 class="text-xl font-bold mt-1">Lyon → Aéroport LYS</h3></div>
+                        <p class="text-gray-300 text-sm mt-2">Déplacement express vers Saint-Exupéry. Ponctualité et confort.</p>
+                        <a href="tel:+33123456789" class="inline-flex items-center gap-2 mt-4 text-[#D4AF37] font-semibold hover:underline">Appeler <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                    <div class="bg-white/5 rounded-2xl p-5 border border-white/10 route-card hover:bg-white/10 transition fade-up">
+                        <div><i class="fas fa-map-marker-alt text-[#D4AF37] text-xl"></i><h3 class="text-xl font-bold mt-1">Marseille → Nice</h3></div>
+                        <p class="text-gray-300 text-sm mt-2">Côte d’Azur en toute élégance. Service avec climatisation et eau minérale.</p>
+                        <a href="tel:+33123456789" class="inline-flex items-center gap-2 mt-4 text-[#D4AF37] font-semibold hover:underline">Appeler <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                    <div class="bg-white/5 rounded-2xl p-5 border border-white/10 route-card hover:bg-white/10 transition fade-up">
+                        <div><i class="fas fa-map-marker-alt text-[#D4AF37] text-xl"></i><h3 class="text-xl font-bold mt-1">Nice → Monaco</h3></div>
+                        <p class="text-gray-300 text-sm mt-2">Trajet panoramique de luxe vers la principauté. Chauffeurs expérimentés.</p>
+                        <a href="tel:+33123456789" class="inline-flex items-center gap-2 mt-4 text-[#D4AF37] font-semibold hover:underline">Appeler <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. VEHICLES SECTION -->
+        <section id="vehicles" class="py-20 px-6 md:px-12 bg-black">
+            <div class="max-w-7xl mx-auto">
+                <div class="text-center mb-12 fade-up">
+                    <h2 class="text-3xl md:text-5xl font-bold">Flotte <span class="gold-text">Haut de Gamme</span></h2>
+                    <p class="text-gray-300 mt-2">Confort, élégance et technologies dernier cri</p>
+                </div>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <div class="bg-neutral-900 rounded-2xl overflow-hidden vehicle-card fade-up border border-white/10">
+                        <div class="h-44 bg-gradient-to-br from-gray-800 to-gray-700 flex items-center justify-center"><i class="fas fa-car-side text-6xl text-[#D4AF37]/70"></i></div>
+                        <div class="p-5"><h3 class="text-2xl font-bold">Mercedes Classe E</h3><p class="text-gray-400">4 places · Cuir · Climatisation · Wi-Fi</p><i class="fas fa-star text-[#D4AF37] text-sm"></i><i class="fas fa-star text-[#D4AF37] text-sm"></i><i class="fas fa-star text-[#D4AF37] text-sm"></i><i class="fas fa-star text-[#D4AF37] text-sm"></i><i class="fas fa-star text-[#D4AF37] text-sm"></i></div>
+                    </div>
+                    <div class="bg-neutral-900 rounded-2xl overflow-hidden vehicle-card fade-up border border-white/10">
+                        <div class="h-44 bg-gradient-to-br from-gray-800 to-gray-700 flex items-center justify-center"><img src="car1.png" alt="Mercedes Classe V" class="w-full h-full object-cover"></div>
+                        <div class="p-5"><h3 class="text-2xl font-bold">Mercedes Classe V</h3><p class="text-gray-400">6-7 places · Espace VIP · Toit panoramique</p><i class="fas fa-star text-[#D4AF37]"></i> Premium family</div>
+                    </div>
+                    <div class="bg-neutral-900 rounded-2xl overflow-hidden vehicle-card fade-up border border-white/10">
+                        <div class="h-44 bg-gradient-to-br from-gray-800 to-gray-700 flex items-center justify-center"><img src="car2.webp" alt="BMW Série 5" class="w-full h-full object-cover"></div>
+                        <div class="p-5"><h3 class="text-2xl font-bold">BMW Série 5</h3><p class="text-gray-400">Business Sedan · Sièges massants · Ambiance lumineuse</p></div>
+                    </div>
+                    <div class="bg-neutral-900 rounded-2xl overflow-hidden vehicle-card fade-up border border-white/10">
+                        <div class="h-44 bg-gradient-to-br from-gray-800 to-gray-700 flex items-center justify-center"><img src="car2.webp" alt="BMW Série 5" class="w-full h-full object-cover"></div>
+                        <div class="p-5"><h3 class="text-2xl font-bold">Tesla Model Y</h3><p class="text-gray-400">Électrique premium · Grand toit vitré · Silence absolu</p></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. WHY CHOOSE US  -->
+        <section class="py-20 px-6 md:px-12 bg-gradient-to-r from-neutral-900 to-black">
+            <div class="max-w-5xl mx-auto text-center lg:text-left lg:flex lg:justify-between items-center gap-12">
+                <div class="fade-up"><h2 class="text-4xl font-bold">Pourquoi <span class="gold-text">Nous Choisir ?</span></h2><div class="w-20 h-1 bg-[#D4AF37] mt-3 mx-auto lg:mx-0 rounded-full"></div></div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-10 lg:mt-0 flex-1">
+                    <div class="flex gap-3 items-start"><i class="fas fa-user-tie text-2xl text-[#D4AF37]"></i><div><h3 class="font-bold">Chauffeurs professionnels</h3><p class="text-gray-300 text-sm">Expérience, discrétion, tenue de cravate.</p></div></div>
+                    <div class="flex gap-3 items-start"><i class="fas fa-hourglass-start text-2xl text-[#D4AF37]"></i><div><h3 class="font-bold">Ponctualité garantie</h3><p class="text-gray-300 text-sm">Nous vous attendons avec une marge d’avance.</p></div></div>
+                    <div class="flex gap-3 items-start"><i class="fas fa-gem text-2xl text-[#D4AF37]"></i><div><h3 class="font-bold">Véhicules haut de gamme</h3><p class="text-gray-300 text-sm">Flotte neuve, entretenue avec soin.</p></div></div>
+                    <div class="flex gap-3 items-start"><i class="fas fa-clock text-2xl text-[#D4AF37]"></i><div><h3 class="font-bold">Disponible 24h/24</h3><p class="text-gray-300 text-sm">Jour et nuit, même les jours fériés.</p></div></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 6. TESTIMONIALS -->
+        <section id="testimonials" class="py-20 px-6 md:px-12 bg-black">
+            <div class="max-w-7xl mx-auto">
+                <div class="text-center mb-12 fade-up"><h2 class="text-3xl md:text-5xl font-bold">Ils nous <span class="gold-text">Font Confiance</span></h2></div>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="bg-white/5 p-6 rounded-2xl border border-white/10 testimonial-card fade-up"><div class="flex mb-2"><i class="fas fa-star text-[#D4AF37]"></i><i class="fas fa-star text-[#D4AF37]"></i><i class="fas fa-star text-[#D4AF37]"></i><i class="fas fa-star text-[#D4AF37]"></i><i class="fas fa-star text-[#D4AF37]"></i></div><p class="italic">"Service exceptionnel ! Chauffeur arrivé 10 min en avance, voiture impeccable. Transfert CDG parfait."</p><p class="mt-3 font-semibold">— Sophie L.</p></div>
+                    <div class="bg-white/5 p-6 rounded-2xl border border-white/10 testimonial-card fade-up"><div class="flex mb-2"><i class="fas fa-star text-[#D4AF37]"></i><i class="fas fa-star text-[#D4AF37]"></i><i class="fas fa-star text-[#D4AF37]"></i><i class="fas fa-star text-[#D4AF37]"></i><i class="fas fa-star text-[#D4AF37]"></i></div><p class="italic">"Je recommande vivement LuxuryDrive. Ponctualité, élégance, une Mercedes flambant neuve. Le top du VTC."</p><p class="mt-3 font-semibold">— Marc D.</p></div>
+                    <div class="bg-white/5 p-6 rounded-2xl border border-white/10 testimonial-card fade-up"><div class="flex mb-2"><i class="fas fa-star text-[#D4AF37]"></i><i class="fas fa-star text-[#D4AF37]"></i><i class="fas fa-star text-[#D4AF37]"></i><i class="fas fa-star text-[#D4AF37]"></i><i class="fas fa-star text-[#D4AF37]"></i></div><p class="italic">"Un grand professionnalisme pour un transfert Monaco-Nice. Le chauffeur était très courtois. 5 étoiles!"</p><p class="mt-3 font-semibold">— Elena R.</p></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 7. FINAL CTA SECTION (strong urgency & phone) -->
+        <section class="py-24 px-6 relative bg-gradient-to-tr from-[#0a0a0a] to-[#1a1406] border-t border-[#D4AF37]/20">
+            <div class="max-w-4xl mx-auto text-center relative z-10">
+                <div class="fade-up">
+                    <h2 class="text-4xl md:text-6xl font-extrabold leading-tight">Besoin d’un <span class="gold-text">Chauffeur maintenant ?</span></h2>
+                    <p class="text-xl text-gray-200 mt-4 mb-8">Réponse immédiate, arrivée sous 15-30 min selon secteur.</p>
+                    <div class="flex flex-col items-center gap-5">
+                        <a href="tel:+33123456789" class="btn-gold text-black font-black text-2xl px-10 py-5 rounded-2xl flex items-center gap-3 shadow-2xl transition-all"><i class="fas fa-phone-alt text-3xl"></i>   +33 1 23 45 67 89</a>
+                        <div class="bg-black/50 rounded-full px-5 py-2 inline-flex items-center gap-2 text-sm"><i class="fas fa-hourglass-half text-[#D4AF37]"></i> <span>Disponibilité garantie – Service urgent 24/7</span></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-black/90 border-t border-white/10 py-8 text-center text-gray-400 text-sm">
+        <div class="max-w-6xl mx-auto px-4">© 2025 LuxuryDrive VTC – Chauffeur privé – Tous droits réservés. | <span class="text-[#D4AF37]">Appelez-nous 24h/24 : +33 1 23 45 67 89</span></div>
+    </footer>
+
+    <!-- JS: Intersection Observer for fade-in animations & smooth scroll -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            // Fade-up on scroll
+            const faders = document.querySelectorAll('.fade-up');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.1, rootMargin: "0px 0px -20px 0px" });
+            faders.forEach(el => observer.observe(el));
+
+            // Smooth scroll for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    const targetId = this.getAttribute('href');
+                    if (targetId === "#" || targetId === "") return;
+                    const targetElem = document.querySelector(targetId);
+                    if (targetElem) {
+                        e.preventDefault();
+                        targetElem.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
